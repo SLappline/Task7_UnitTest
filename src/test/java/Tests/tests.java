@@ -1,6 +1,5 @@
 package Tests;
 
-import org.example.Calculator.Calculate;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -31,7 +30,7 @@ class CalculatorTest {
     }
 
     @Test
-    void divisionCheckByZero() {
+    public void ArithmeticException() {
         assertEquals(6.0, 0, '/');
     }
 }

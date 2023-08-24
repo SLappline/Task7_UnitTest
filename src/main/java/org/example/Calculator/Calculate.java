@@ -11,7 +11,10 @@ public class Calculate {
             case '*' -> result = num1 * num2;
             case '/' -> {
                 try{
-                    if (num2 != 0){
+                    if (num2 == 0){
+                        throw new ArithmeticException("Деление на ноль");
+                    }
+                    else {
                         result = num1 / num2;
                     }
                 }
