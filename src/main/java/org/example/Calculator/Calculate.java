@@ -1,5 +1,7 @@
 package org.example.Calculator;
 
+import static org.example.Calculator.Operations.getOperation;
+
 public class Calculate {
     public static double calc(double num1, double num2, char operation) {
         double result = 0;
@@ -18,8 +20,9 @@ public class Calculate {
                         result = num1 / num2;
                     }
                 }
-                catch (Exception e){
+                catch (ArithmeticException e){
                     System.out.println("На ноль делить нельзя");
+                    return getOperation();
                 }
             }
             default -> {
