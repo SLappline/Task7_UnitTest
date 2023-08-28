@@ -1,24 +1,31 @@
 package org.example.Calculator;
 
-import java.util.InputMismatchException;
-
-import static org.example.Main.scanner;
 
 public class Numbers {
-    public static double numbers() {
+    public static double val;
+
+    public static Object numbers(String num) {
 //        Запрашиваем ввод двух чисел через консоль.
 //        В случае ошибки, вводим повторно.
-        double num;
         try{
-            System.out.print("Введите дробное число:");
-            num = Double.parseDouble(scanner.next());
+            Double.parseDouble(num);
         }
         catch (NumberFormatException e){
             System.out.println("Вы не верно ввели число.");
             System.out.println("Укажите дробное число через точку\".\"");
-            return numbers();
+            return new NumberFormatException();
         }
+        Numbers result = new Numbers();
+        setVal(Double.parseDouble(num));
+        return result;
         //Возвращаем введенные числа
-        return num;
+    }
+
+    public static double getVal() {
+        return val;
+    }
+
+    public static void setVal(double val) {
+        Numbers.val = val;
     }
 }
